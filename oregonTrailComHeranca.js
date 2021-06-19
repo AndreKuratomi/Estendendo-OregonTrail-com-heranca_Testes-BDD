@@ -1,57 +1,101 @@
-// Relembre como usar herança/delegação para estender um objeto de classe criando uma nova variação da classe original. 
-// Aqui está um exemplo:
-
-// class Dog {
-//    constructor(name, breed, isGoodBoy) {
-//       this.name = name;
-//       this.breed = breed;
-//       this.isGoodBoy = isGoodBoy;
-//    }
-
-//    sit() {
-//        // sitting code here
-//    }
-// }
-
-// class GuardDog extends Dog {
-//    constructor(name, breed, isGoodBoy, attackWord) {
-//       super(name, breed, isGoodBoy)
-//       this.attackWord = attackWord;
-//    }
-
-//    bark() {
-//       // barking code here
-//    }
-// }
+// Traveler:
+class Traveler {
+    constructor(name) {
+        this.name = name;
+        this.food = 1;
+        this.isHealthy = true;
+    }
+    
+    hunt() {
+        this.food += 2;
+    }
+    
+    eat() {
+        if (this.food > 0) {
+            this.food--;
+        }
+        this.isHealthy = false;
+    }
+};
 
 
+// Wagon:
+class Wagon {
+    constructor(capacity) {
+        this.capacity = capacity;
+        this.passengers = [];
+    }
+    
+    getAvailableSeatCount() {
+        if (this.capacity > this.passengers.length) {
+            let available = this.capacity - this.passengers.length;
+            return available; 
+        }
+        return 0;
+    }
+    
+    join(traveler) {
+        if (this.getAvailableSeatCount() > 0) {
+            this.passengers.push(traveler);
+        }
+    }
+    
+    shouldQuarantine() {
+        for (let count = 0; count < this.passengers.length; count++) {
+            if (this.passengers[count].isHealthy === false) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-// Nesta Entrega, você irá estender seu código do Oregon Trail para usar herança para criar dois novos tipos de viajante: 
+    totalFood() {
+        let amountOfFood = 0;
+        for (let count = 0; count < this.passengers.length; count++) {
+            amountOfFood += this.passengers[count].food;
+        }
+        return amountOfFood;
+    }
+};
 
 
+class Doctor extends Traveler {
+    constructor(name) {
+        super(name) //elementos chumbados entram aqui também?
+        this.food = 1;
+        this.isHealthy = true;
+    }
+    
+    heal(traveler) {
+        traveler.isHealthy = true;
+    }
+};
 
-// Doctor (Médico) e Hunter (Caçador). Eles terão todas as outras características de qualquer outro Viajante, com essas diferenças:
+class Hunter extends Traveler {
+    constructor(name) {
+        super(name)
+        this.food = 2;
+        this.isHealthy = true;
+    }
 
-// 1.Doctor
-// Um Médico é um Viajante especializado em medicina que tem como o objetivo curar viajantes doentes.
+    hunt() {//setter
+        this.food += 5;
+    }
 
-// Método heal(traveler)
-// Um viajante será passado como parâmetro para o método .heal(), e a propriedade isHealthy deverá mudar para true.
+    eat() {
+        if (this.food < 2) {
+            this.isHealthy = false;
+        }
+        this.food -= 2;
+    }
 
-// 2. Hunter
-// Um Caçador é um Viajante que se dá melhor encontrando comida, mas também precisa de mais comida. Ele começa com 2 comidas em 
-// vez de apenas 1 como os outros viajantes. Ele também pode dar comida para outros viajantes:
-
-// Método hunt()
-// Aumente a comida do caçador em 5. (Um viajante convencional ganha apenas 2.)
-
-// Método eat()
-// Consome 2 unidades da comida do caçador. Se um caçador não tiver 2 comidas quando for instruído a comer, ele come o quanto 
-// puder (0 ou 1 unidade), mas o caçador não fica mais saudável. (Um viajante normal come apenas 1 unidade de comida.)
-
-// Método giveFood(traveler, numOfFoodUnits)
-// Transfere numOfFoodUnits do caçador para outro viajante. Se o caçador tiver menos comida do que foi instruído a dar, então 
-// nenhuma comida é transferida.
+    giveFood(traveler, numOfFoodUnits) {//getter
+        if (this.food > numOfFoodUnits) {
+            this.food -= numOfFoodUnits;
+            traveler.bind(this.food) += numOfFoodUnits;
+        }
+    }
+};
 
 
 // TESTE
