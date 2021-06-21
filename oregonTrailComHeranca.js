@@ -61,7 +61,7 @@ class Wagon {
 
 class Doctor extends Traveler {
     constructor(name) {
-        super(name) //elementos chumbados entram aqui também?
+        super(name)
         this.food = 1;
         this.isHealthy = true;
     }
@@ -78,13 +78,14 @@ class Hunter extends Traveler {
         this.isHealthy = true;
     }
 
-    hunt() {//setter
+    hunt() {
         this.food += 5;
     }
 
     eat() {
         if (this.food < 2) {
             this.isHealthy = false;
+            this.food = 0;
         }
         this.food -= 2;
     }
@@ -92,7 +93,7 @@ class Hunter extends Traveler {
     giveFood(traveler, numOfFoodUnits) {//getter
         if (this.food > numOfFoodUnits) {
             this.food -= numOfFoodUnits;
-            traveler.bind(this.food) += numOfFoodUnits;
+            traveler.food += numOfFoodUnits;
         }
     }
 };
