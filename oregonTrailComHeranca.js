@@ -113,5 +113,29 @@ class Hunter extends Traveler {
 // Hunter e Doctor devem passar nos testes;
 // Talvez seja necessário alterar seu antigo código do Oregon Trail para passar nos testes feitos para eles.
 
-// OBS: Não é necessário se preocupar com o formato ao qual foi desenvolvido o teste de Wagon. Ele está ali apenas para consulta. 
+// OBS: Não é necessário se preocupar com o formato ao qual foi desenvolvido o teste de Wagon. 
+// Ele está ali apenas para consulta. 
 // Se quiser se aprofundar mais no conteúdo, busque pelo material complementar no canvas
+
+// Criar uma carroça que comporta 2 pessoas
+let wagon = new Wagon(2);
+// Criar três viajantes
+let henrietta = new Traveler('Henrietta');
+let juan = new Traveler('Juan');
+let maude = new Traveler('Maude');
+
+console.log(`${wagon.getAvailableSeatCount()} should be 2`);
+
+wagon.join(henrietta);
+console.log(`${wagon.getAvailableSeatCount()} should be 1`);
+
+wagon.join(juan);
+wagon.join(maude); // Não tem espaço para ela!
+console.log(`${wagon.getAvailableSeatCount()} should be 0`);
+
+henrietta.hunt(); // pega mais comida
+juan.eat();
+juan.eat(); // juan agora está com fome (doente)
+
+console.log(`${wagon.shouldQuarantine()} should be true since juan is sick`);
+console.log(`${wagon.totalFood()} should be 3`);
