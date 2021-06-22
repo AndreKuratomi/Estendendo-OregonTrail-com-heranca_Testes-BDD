@@ -1,7 +1,6 @@
 {
   "name": "estendendo-o-oregon-trail-com-heranca",
   "version": "1.0.0",
-  "description": "",
   "main": "oregonTrailComHeranca.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,7 +16,9 @@
     "url": "https://gitlab.com/ABKURA/estendendo-o-oregon-trail-com-heranca/issues"
   },
   "homepage": "https://gitlab.com/ABKURA/estendendo-o-oregon-trail-com-heranca#readme",
-  "dependencies": {
+  "dependencies": {},
+  "description": "",
+  "devDependencies": {
     "@cucumber/cucumber": "^7.3.0"
   }
 }
