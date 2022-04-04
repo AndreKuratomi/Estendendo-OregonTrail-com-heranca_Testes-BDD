@@ -9,7 +9,7 @@
 
 # Descrição
 
-<p>Em continuidade à aplicação <b>[OregonTrail](https://github.com/AndreKuratomi/OregonTrail-com-sintaxe-de-classes_Testes)</b> <strong>Estendendo OregonTrail com herança</strong> é uma aplicação que, como o próprio nome diz, estende de OregonTrail criando personagens Hunter e Doctor com sintaxe de classes. Esta aplicação utiliza HTML5, CSS3 e a linguagem Javascript com e Programação Orientada a Objetos e Testes BDD.</p>
+<p>Em continuidade à aplicação <b>[OregonTrail](https://github.com/AndreKuratomi/OregonTrail-com-sintaxe-de-classes_Testes)</b> <strong>Estendendo OregonTrail com herança</strong> é uma aplicação que, como o próprio nome diz, estende de OregonTrail criando personagens Hunter e Doctor com sintaxe de classes. Esta aplicação utiliza HTML5, CSS3 e a linguagem Javascript com orientação a objetos e Testes BDD.</p>
 <br>
 
 # Instalação
