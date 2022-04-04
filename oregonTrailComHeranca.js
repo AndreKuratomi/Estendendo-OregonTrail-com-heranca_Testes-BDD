@@ -97,37 +97,3 @@ class Hunter extends Traveler {
         }
     }
 };
-
-
-// TESTE
-// Nesse repositório foi disponibilizado os testes desenvolvidos nos vídeos de BDD para Traveler, 
-// e também para Wagon, de uma maneira muito mais complexa.
-
-// Hunter e Doctor devem passar nos testes;
-// Talvez seja necessário alterar seu antigo código do Oregon Trail para passar nos testes feitos para eles.
-
-
-
-
-// // Criar uma carroça que comporta 2 pessoas
-// let wagon = new Wagon(2);
-// // Criar três viajantes
-// let henrietta = new Traveler('Henrietta');
-// let juan = new Traveler('Juan');
-// let maude = new Traveler('Maude');
-
-// console.log(`${wagon.getAvailableSeatCount()} should be 2`);
-
-// wagon.join(henrietta);
-// console.log(`${wagon.getAvailableSeatCount()} should be 1`);
-
-// wagon.join(juan);
-// wagon.join(maude); // Não tem espaço para ela!
-// console.log(`${wagon.getAvailableSeatCount()} should be 0`);
-
-// henrietta.hunt(); // pega mais comida
-// juan.eat();
-// juan.eat(); // juan agora está com fome (doente)
-
-// console.log(`${wagon.shouldQuarantine()} should be true since juan is sick`);
-// console.log(`${wagon.totalFood()} should be 3`);
