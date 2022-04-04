@@ -37,27 +37,19 @@ git clone https://github.com/AndreKuratomi/Estendendo-OregonTrail-com-heranca_Te
 cd estendendo-OregonTrail-com-heranca_Testes-BDD
 ```
 
-<p>E rodar a aplicação:</p>
+<p>E instalar as dependências:</p>
 
 ```
-code .
+npm install
 ```
-
-<br>
-
 
 # Utilização
-
-
-<h3>Via VSCode:</h3>
 
 <p>Para rodar os testes precisamos rodar o seguinte comando:</p>
 
 ```
-node oregonTrailComHerança.js
+npm test
 ```
-
-<p>Ou rodamos a extensão do VSCode <b>Go live</b> e checar pelo console do DevTools.</p>
 
 # Termos de uso
 
